@@ -59,6 +59,7 @@ router.post('/read', function (req, res) {
 })
 
 // Ruta que está protegida por nuestro middleware llamado "auth_required"
+// Se escribe el Middleware entre medio del /my y req
 router.get('/my', auth_required, (req, res) => {
 
   // Info que viene desde el middleware

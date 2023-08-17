@@ -2,11 +2,17 @@ const jwt = require('jsonwebtoken')
 
 const llave_secreta = 'topsecret'
 
+//El middleware auth_required se utiliza para asegurarse de que 
+//las rutas protegidas por autenticación solo sean accesibles por usuarios autenticados y con tokens válidos.
 
 function auth_required (req, res, next) {
-  // quiero que esta ruta sólo sea para usuarios logueados
-  // Si puedo abrir el token, entonces asumimos que el usuario SI está logueado
-  // 1. Verificamos que tenga un token válido
+    // quiero que esta ruta sólo sea para usuarios logueados
+    // Si puedo abrir el token, entonces asumimos que el usuario SI está logueado
+    // 1. Verificamos que tenga un token válido
+
+//Se extrae el encabezado authorization de la solicitud HTTP. 
+//Esto suele ser el token JWT enviado en el encabezado de autorización 
+//del formato "Bearer <token>".
   const {authorization} = req.headers
   
   let decoded;

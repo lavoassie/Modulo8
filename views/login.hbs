@@ -28,7 +28,8 @@
     // 1. Evitamos que se recargue el formulario
     ev.preventDefault()
 
-    // 2. Mandamos la solicitud al servidor
+    // 2. Mandamos la solicitud al servidor con
+    // los datos del usuario obtenidos a través del formulario 
     const {data} = await axios.post('/api/auth/login', {
       email: email.value,
       password: password.value
